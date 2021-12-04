@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <main className="home">
+    <main className="home-page">
       <h1>Welcome to THE PLANETS fact site</h1>
       <p>
         Click on one of the planet's link to learn more about each of these

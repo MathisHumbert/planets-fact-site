@@ -596,10 +596,22 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 20px 0;
   text-decoration: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .sidebar-item .arrow-right {
   color: rgba(255, 255, 255, 0.4);
+  -webkit-transition: color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+
+.sidebar-item:hover {
+  border-color: #fff;
+}
+
+.sidebar-item:hover .arrow-right {
+  color: #fff;
 }
 
 .sidebar-planet {
@@ -657,7 +669,8 @@ body {
   }
 }
 
-.home {
+.home-page,
+.error-page {
   width: calc(100vw - 48px);
   margin: 2rem auto;
   display: -webkit-box;
@@ -667,18 +680,24 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
 }
 
-.home h1 {
+.home-page h1,
+.error-page h1 {
   text-align: center;
 }
 
-.home p {
+.home-page p,
+.error-page p {
   font-size: 16px;
 }
 
-.home .home-link {
+.home-link,
+.error-link {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-family: "Spartan", sans-serif;
@@ -690,10 +709,18 @@ body {
   cursor: pointer;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  text-decoration: none;
 }
 
-.home:hover {
+.home-link:hover,
+.error-link:hover {
   border-color: #6d2ed5;
-  color: red;
+  color: #6d2ed5;
+}
+
+.error-link {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 /*# sourceMappingURL=index.css.map */

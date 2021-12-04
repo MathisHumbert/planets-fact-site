@@ -1,8 +1,10 @@
-.home {
+.home-page,
+.error-page {
   width: calc(100vw - 48px);
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 
   h1 {
@@ -12,22 +14,28 @@
   p {
     font-size: 16px;
   }
+}
 
-  .home-link {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    font-family: $spartan-font;
-    font-size: 12px;
-    font-weight: bold;
-    color: $white-color;
-    text-transform: uppercase;
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-  }
+.home-link,
+.error-link {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-family: $spartan-font;
+  font-size: 12px;
+  font-weight: bold;
+  color: $white-color;
+  text-transform: uppercase;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
 
   &:hover {
     border-color: $earth;
-    color: red;
+    color: $earth;
   }
+}
+
+.error-link {
+  max-width: fit-content;
 }
