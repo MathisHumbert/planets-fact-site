@@ -13,6 +13,18 @@ $saturn: #cd5120;
 $uranus: #1ec1a2;
 $neptune: #2d68f0;
 
+@mixin tabletScreen {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktopScreen {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
 h1 {
   font-size: 40px;
   font-family: $antonio-font;
@@ -46,6 +58,17 @@ p {
   text-align: center;
 }
 
+@include tabletScreen {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+    letter-spacing: -0.9px;
+  }
+}
+
 .btn-info {
   background: transparent;
   border: 0;
@@ -60,7 +83,31 @@ p {
 
   &.active {
     color: $white-color;
-    border-color: red;
+
+    &.Mercury {
+      border-color: $mercury;
+    }
+    &.Venus {
+      border-color: $venus;
+    }
+    &.Earth {
+      border-color: $earth;
+    }
+    &.Mars {
+      border-color: $mars;
+    }
+    &.Jupiter {
+      border-color: $jupiter;
+    }
+    &.Saturn {
+      border-color: $saturn;
+    }
+    &.Uranus {
+      border-color: $uranus;
+    }
+    &.Neptune {
+      border-color: $neptune;
+    }
   }
 
   span {

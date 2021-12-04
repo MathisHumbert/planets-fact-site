@@ -5,6 +5,7 @@
   &-img-container {
     width: 100%;
     padding: 116px 0 4rem 0;
+
     .planet-img {
       display: block;
       margin: 0 auto;
@@ -12,7 +13,7 @@
     }
   }
 
-  &-info {
+  .info-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,11 +35,20 @@
   display: flex;
   align-items: center;
   gap: 3px;
+
+  .wiki-logo {
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover .wiki-logo {
+    font-size: 20px;
+  }
 }
 
 .btn-info-container {
   position: absolute;
   top: 69px;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -61,5 +71,104 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+  }
+}
+
+@include tabletScreen {
+  .planet {
+    width: calc(100% - 4rem);
+
+    &-img-container {
+      padding: 4rem 0 4rem 0;
+    }
+
+    &-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .info-container {
+      align-items: inherit;
+      gap: 1rem;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  .btn-info-container {
+    position: inherit;
+    top: inherit;
+    left: inherit;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0px;
+    border-bottom: none;
+  }
+
+  .btn-info {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $white-color;
+    text-transform: uppercase;
+    padding: 0;
+    padding-left: 20px;
+    text-align: left;
+
+    &.active {
+      &.Mercury {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $mercury;
+      }
+      &.Venus {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $venus;
+      }
+      &.Earth {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $earth;
+      }
+      &.Mars {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $mars;
+      }
+      &.Jupiter {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $jupiter;
+      }
+      &.Saturn {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $saturn;
+      }
+      &.Uranus {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $uranus;
+      }
+      &.Neptune {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: $neptune;
+      }
+    }
+
+    span {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.5);
+      margin-right: 1rem;
+    }
+  }
+
+  .footer {
+    flex-direction: row;
+
+    &-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
+    }
   }
 }

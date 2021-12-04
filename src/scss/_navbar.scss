@@ -24,5 +24,51 @@
     font-size: 27px;
     color: $white-color;
     cursor: pointer;
+    transition: color 0.8s ease-in-out;
+
+    &.active {
+      color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  .links {
+    display: none;
+  }
+}
+
+@include tabletScreen {
+  .nav {
+    padding: 20px 0;
+
+    .title {
+      padding-bottom: 20px;
+    }
+
+    &-center {
+      width: calc(100% - 4rem);
+      flex-direction: column;
+    }
+
+    .links {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: $white-color;
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 1px;
+        line-height: 25px;
+        border-bottom: 1px solid red;
+        padding-bottom: 22px;
+      }
+    }
+
+    .sidebar-btn {
+      display: none;
+    }
   }
 }

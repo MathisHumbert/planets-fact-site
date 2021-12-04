@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 
 const Sidebar = () => {
-  const { isSidebarOpen } = useGlobalContext();
+  const { isSidebarOpen, setIsSidebarOpen } = useGlobalContext();
 
   return (
     <aside className={`sidebar ${isSidebarOpen && 'open'}`}>
       {data.map((item, index) => {
         return (
           <Link
-            to={`/plante/${item.name}`}
+            to={`/planet/${item.name}`}
             className="sidebar-item"
             key={index}
+            onClick={() => setIsSidebarOpen(false)}
           >
             <div className="sidebar-planet">
               <span className={`round-planet ${item.name}`}></span>

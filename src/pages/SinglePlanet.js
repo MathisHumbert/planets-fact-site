@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router';
+import { useParams } from 'react-router';
 import data from '../data.json';
 import logo from '../assets/planet-earth.svg';
 import { BsArrowUpRightSquareFill } from 'react-icons/bs';
@@ -12,30 +12,39 @@ const SinglePlanet = () => {
   const [planetImage, setPlanetImage] = useState(null);
   const [planetText, setPlanetText] = useState(null);
   const [planetLink, setPlanetLink] = useState(null);
-  const [active, setActive] = useState('overview');
+  const [active, setActive] = useState('');
 
   useEffect(() => {
     setLoading(true);
 
     const singlePlanet = data.filter((item) => item.name === name);
-    setPlanet(singlePlanet);
+    setPlanet(singlePlanet[0]);
     setPlanetImage(singlePlanet[0].images.planet);
     setPlanetText(singlePlanet[0].overview.content);
     setPlanetLink(singlePlanet[0].overview.source);
+    setActive('overview');
     setLoading(false);
-  }, []);
+  }, [name]);
 
   if (loading) {
     return <h1>Loading...</h1>;
   }
 
-  const { rotation, revolution, radius, temperature } = planet[0];
+  const { rotation, revolution, radius, temperature } = planet;
 
   const toggleContent = (e) => {
     const label = e.target.dataset.label;
-    setPlanetText(planet[0][label].content);
+    setPlanetText(planet[label].content);
     setActive(label);
-    setPlanetLink(planet[0][label].source);
+    setPlanetLink(planet[label].source);
+
+    if (label === 'overview') {
+      setPlanetImage(planet.images.planet);
+    } else if (label === 'structure') {
+      setPlanetImage(planet.images.internal);
+    } else {
+      setPlanetImage(planet.images.geology);
+    }
   };
 
   return (
@@ -44,18 +53,22 @@ const SinglePlanet = () => {
         <img src={logo} alt="test" className="planet-img" />
       </div>
       <article className="planet-info">
-        <h1>{name}</h1>
-        <p>{planetText}</p>
-        <p className="wiki-link-container">
-          Source :
-          <a href={planetLink} className="wiki-link" target="_blank">
-            Wikipedia
-            <BsArrowUpRightSquareFill className="wiki-logo" />
-          </a>
-        </p>
+        <div className="info-container">
+          <h1>{name}</h1>
+          <p>{planetText}</p>
+          <p className="wiki-link-container">
+            Source :
+            <a href={planetLink} className="wiki-link" target="_blank">
+              Wikipedia
+              <BsArrowUpRightSquareFill className="wiki-logo" />
+            </a>
+          </p>
+        </div>
         <div className="btn-info-container">
           <button
-            className={`btn-info ${active === 'overview' ? 'active' : null}`}
+            className={`btn-info ${
+              active === 'overview' ? 'active' : null
+            } ${name}`}
             data-label="overview"
             onClick={(e) => toggleContent(e)}
           >
@@ -63,14 +76,18 @@ const SinglePlanet = () => {
             <span>01</span> overview
           </button>
           <button
-            className={`btn-info ${active === 'structure' ? 'active' : null}`}
+            className={`btn-info ${
+              active === 'structure' ? 'active' : null
+            } ${name}`}
             data-label="structure"
             onClick={(e) => toggleContent(e)}
           >
             <span>02</span> internal structure
           </button>
           <button
-            className={`btn-info ${active === 'geology' ? 'active' : null}`}
+            className={`btn-info ${
+              active === 'geology' ? 'active' : null
+            } ${name}`}
             data-label="geology"
             onClick={(e) => toggleContent(e)}
           >

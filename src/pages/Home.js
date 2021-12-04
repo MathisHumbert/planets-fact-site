@@ -10,7 +10,7 @@ const Home = () => {
         planets!
       </p>
       <p>
-        Learn more about <Link to="/plante/Earth">Our Planet</Link>
+        Learn more about <Link to="/planet/Earth">Our Planet</Link>
       </p>
     </main>
   );

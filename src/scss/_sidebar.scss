@@ -63,3 +63,9 @@
     }
   }
 }
+
+@include tabletScreen {
+  .sidebar {
+    display: none;
+  }
+}
