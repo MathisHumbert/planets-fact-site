@@ -50,7 +50,7 @@ const SinglePlanet = () => {
   return (
     <main className="planet">
       <div className="planet-img-container">
-        <img src={logo} alt="test" className="planet-img" />
+        <img src={planetImage} alt="test" className="planet-img" />
       </div>
       <article className="planet-info">
         <div className="info-container">
