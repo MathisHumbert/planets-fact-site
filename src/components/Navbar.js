@@ -6,9 +6,11 @@ import { useGlobalContext } from '../context';
 const Navbar = () => {
   const { setIsSidebarOpen } = useGlobalContext();
   return (
-    <nav>
+    <nav className="nav">
       <div className="nav-center">
-        <Link to="/">the planets</Link>
+        <Link to="/" className="title">
+          the planets
+        </Link>
         <GiHamburgerMenu
           className="sidebar-btn"
           onClick={() => setIsSidebarOpen((oldValue) => !oldValue)}

@@ -1,0 +1,14 @@
+@import './global-var';
+
+body {
+  background: $background-color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import './navbar';
+@import './single-planet';
