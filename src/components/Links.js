@@ -8,7 +8,9 @@ const Links = () => {
       {data.map((item, index) => {
         return (
           <li key={index} className="nav-links">
-            <Link to={`/planet/${item.name}`}>{item.name}</Link>
+            <Link to={`/planet/${item.name}`} className={item.name}>
+              {item.name}
+            </Link>
           </li>
         );
       })}

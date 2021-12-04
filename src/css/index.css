@@ -53,6 +53,8 @@ p {
   padding: 20px 0;
   cursor: pointer;
   border-bottom: 4px solid transparent;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-info.active {
@@ -176,16 +178,46 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    list-style-type: none;
   }
   .nav .links a {
     text-decoration: none;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.75);
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 1px;
     line-height: 25px;
-    border-bottom: 1px solid red;
+    border-bottom: 4px solid transparent;
     padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+  .nav .links a:hover {
+    color: #fff;
+  }
+  .nav .links a:hover.Mercury {
+    border-color: #419ebb;
+  }
+  .nav .links a:hover.Venus {
+    border-color: #eda249;
+  }
+  .nav .links a:hover.Earth {
+    border-color: #6d2ed5;
+  }
+  .nav .links a:hover.Mars {
+    border-color: #d14c32;
+  }
+  .nav .links a:hover.Jupiter {
+    border-color: #d83a34;
+  }
+  .nav .links a:hover.Saturn {
+    border-color: #cd5120;
+  }
+  .nav .links a:hover.Uranus {
+    border-color: #1ec1a2;
+  }
+  .nav .links a:hover.Neptune {
+    border-color: #2d68f0;
   }
   .nav .sidebar-btn {
     display: none;

@@ -54,16 +54,47 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      list-style-type: none;
 
       a {
         text-decoration: none;
-        color: $white-color;
+        color: rgba(255, 255, 255, 0.75);
         text-transform: uppercase;
         font-size: 11px;
         letter-spacing: 1px;
         line-height: 25px;
-        border-bottom: 1px solid red;
-        padding-bottom: 22px;
+        border-bottom: 4px solid transparent;
+        padding-bottom: 20px;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+          color: $white-color;
+
+          &.Mercury {
+            border-color: $mercury;
+          }
+          &.Venus {
+            border-color: $venus;
+          }
+          &.Earth {
+            border-color: $earth;
+          }
+          &.Mars {
+            border-color: $mars;
+          }
+          &.Jupiter {
+            border-color: $jupiter;
+          }
+          &.Saturn {
+            border-color: $saturn;
+          }
+          &.Uranus {
+            border-color: $uranus;
+          }
+          &.Neptune {
+            border-color: $neptune;
+          }
+        }
       }
     }
 
