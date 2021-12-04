@@ -17,7 +17,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/plante/:id" element={<SinglePlanet />} />
+        <Route path="/plante/:name" element={<SinglePlanet />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>

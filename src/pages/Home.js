@@ -1,7 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  return <div>home</div>;
+  return (
+    <main>
+      <h1>Welcome to THE PLANETS fact site</h1>
+      <p>
+        Click on one of the planet's link to learn more about each of these
+        planets!
+      </p>
+      <p>
+        Learn more about <Link to="/plante/Earth">Our Planet</Link>
+      </p>
+    </main>
+  );
 };
 
 export default Home;

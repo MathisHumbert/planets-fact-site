@@ -4,14 +4,15 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useGlobalContext } from '../context';
 
 const Navbar = () => {
-  const value = useGlobalContext();
-  console.log(value);
-
+  const { setIsSidebarOpen } = useGlobalContext();
   return (
     <nav>
       <div className="nav-center">
         <Link to="/">the planets</Link>
-        <GiHamburgerMenu />
+        <GiHamburgerMenu
+          className="sidebar-btn"
+          onClick={() => setIsSidebarOpen((oldValue) => !oldValue)}
+        />
       </div>
     </nav>
   );

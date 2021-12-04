@@ -3,7 +3,13 @@ import React, { useState, useContext, useEffect } from 'react';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>;
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  return (
+    <AppContext.Provider value={{ setIsSidebarOpen, isSidebarOpen }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 const useGlobalContext = () => {
