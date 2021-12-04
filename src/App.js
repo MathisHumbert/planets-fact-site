@@ -10,9 +10,18 @@ import Error from './pages/Error';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
+import backgroundLogo from './background-stars.svg';
+
 function App() {
   return (
     <Router>
+      <div>
+        <img
+          src={backgroundLogo}
+          alt="background-logo"
+          className="background-logo"
+        />
+      </div>
       <Navbar />
       <Sidebar />
       <Routes>

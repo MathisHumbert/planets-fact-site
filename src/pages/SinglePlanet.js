@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import data from '../data.json';
-import logo from '../assets/planet-earth.svg';
 import { BsArrowUpRightSquareFill } from 'react-icons/bs';
 
 const SinglePlanet = () => {
@@ -10,6 +9,7 @@ const SinglePlanet = () => {
   const [planet, setPlanet] = useState([]);
   const [loading, setLoading] = useState(true);
   const [planetImage, setPlanetImage] = useState(null);
+  const [planetSubImage, setPlanetSubImage] = useState(false);
   const [planetText, setPlanetText] = useState(null);
   const [planetLink, setPlanetLink] = useState(null);
   const [active, setActive] = useState('');
@@ -20,6 +20,7 @@ const SinglePlanet = () => {
     const singlePlanet = data.filter((item) => item.name === name);
     setPlanet(singlePlanet[0]);
     setPlanetImage(singlePlanet[0].images.planet);
+    setPlanetSubImage(false);
     setPlanetText(singlePlanet[0].overview.content);
     setPlanetLink(singlePlanet[0].overview.source);
     setActive('overview');
@@ -40,17 +41,27 @@ const SinglePlanet = () => {
 
     if (label === 'overview') {
       setPlanetImage(planet.images.planet);
+      setPlanetSubImage(false);
     } else if (label === 'structure') {
       setPlanetImage(planet.images.internal);
+      setPlanetSubImage(false);
     } else {
-      setPlanetImage(planet.images.geology);
+      setPlanetImage(planet.images.planet);
+      setPlanetSubImage(true);
     }
   };
 
   return (
     <main className="planet">
       <div className="planet-img-container">
-        <img src={planetImage} alt="test" className="planet-img" />
+        <img src={planetImage} alt="planet-img" className="planet-img" />
+        {planetSubImage && (
+          <img
+            src={planet.images.geology}
+            alt="sub-planet-img"
+            className="sub-planet-img"
+          />
+        )}
       </div>
       <article className="planet-info">
         <div className="info-container">
@@ -58,7 +69,12 @@ const SinglePlanet = () => {
           <p>{planetText}</p>
           <p className="wiki-link-container">
             Source :
-            <a href={planetLink} className="wiki-link" target="_blank">
+            <a
+              href={planetLink}
+              className="wiki-link"
+              target="_blank"
+              rel="noreferrer"
+            >
               Wikipedia
               <BsArrowUpRightSquareFill className="wiki-logo" />
             </a>

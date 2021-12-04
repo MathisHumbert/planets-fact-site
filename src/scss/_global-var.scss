@@ -69,6 +69,28 @@ p {
   }
 }
 
+@include desktopScreen {
+  h1 {
+    font-size: 80px;
+  }
+
+  h2 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  h4 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 25px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
 .btn-info {
   background: transparent;
   border: 0;

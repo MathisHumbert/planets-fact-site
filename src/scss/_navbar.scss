@@ -103,3 +103,28 @@
     }
   }
 }
+
+@include desktopScreen {
+  .nav {
+    padding: 16px 0;
+
+    .title {
+      padding-bottom: 0;
+    }
+
+    &-center {
+      flex-direction: row;
+    }
+
+    .links {
+      width: 665px;
+
+      a {
+        border-bottom: none;
+        padding-bottom: 0;
+        border-top: 4px solid transparent;
+        padding-top: 22px;
+      }
+    }
+  }
+}

@@ -1,15 +1,27 @@
 .planet {
   width: calc(100% - 48px);
   margin: 0 auto;
+  max-width: 1220px;
 
   &-img-container {
     width: 100%;
-    padding: 116px 0 4rem 0;
+    padding: 84px 0 4rem 0;
+    position: relative;
 
     .planet-img {
       display: block;
       margin: 0 auto;
       width: 40%;
+      max-width: 420px;
+    }
+
+    .sub-planet-img {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      width: 20%;
+      display: block;
+      max-width: 160px;
     }
   }
 
@@ -79,7 +91,7 @@
     width: calc(100% - 4rem);
 
     &-img-container {
-      padding: 4rem 0 4rem 0;
+      padding: 2rem 0 3rem 0;
     }
 
     &-info {
@@ -118,6 +130,11 @@
     padding: 0;
     padding-left: 20px;
     text-align: left;
+
+    &:hover {
+      background: rgba(216, 216, 216, 0.2);
+      border-color: transparent;
+    }
 
     &.active {
       &.Mercury {
@@ -169,6 +186,58 @@
       display: flex;
       flex-direction: column;
       align-items: inherit;
+    }
+  }
+}
+
+@include desktopScreen {
+  .planet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 6rem;
+    gap: 8rem;
+    align-items: center;
+
+    &-img-container {
+      padding: 0;
+
+      .planet-img {
+        width: 100%;
+        max-width: inherit;
+      }
+
+      .sub-planet-img {
+        transform: translate(-50%, -75%);
+        width: 30%;
+        max-width: inherit;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-container {
+      align-items: inherit;
+      gap: 1rem;
+    }
+  }
+
+  .wiki-link-container {
+    font-size: 14px;
+  }
+
+  .btn-info {
+    font-size: 12px;
+  }
+
+  .footer {
+    grid-column: 1 / 3;
+
+    &-item {
+      padding: 20px;
     }
   }
 }
