@@ -1,0 +1,65 @@
+.sidebar {
+  position: fixed;
+  height: 0;
+  width: 100vw;
+  padding: 0 24px;
+  background: $background-color;
+  z-index: 3;
+  overflow: hidden;
+  transition: height 0.8s ease-in-out;
+
+  &.open {
+    height: 100vh;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    text-decoration: none;
+
+    .arrow-right {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &-planet {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .round-planet {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+
+      &.Mercury {
+        background: $mercury;
+      }
+      &.Venus {
+        background: $venus;
+      }
+      &.Earth {
+        background: $earth;
+      }
+      &.Mars {
+        background: $mars;
+      }
+      &.Jupiter {
+        background: $jupiter;
+      }
+      &.Saturn {
+        background: $saturn;
+      }
+      &.Uranus {
+        background: $uranus;
+      }
+      &.Neptune {
+        background: $neptune;
+      }
+    }
+  }
+}

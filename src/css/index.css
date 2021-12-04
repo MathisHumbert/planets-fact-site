@@ -38,9 +38,16 @@ p {
   font-family: "Spartan", sans-serif;
   font-size: 9px;
   font-weight: bold;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
   padding: 20px 0;
+  cursor: pointer;
+  border-bottom: 4px solid transparent;
+}
+
+.btn-info.active {
+  color: #fff;
+  border-color: red;
 }
 
 .btn-info span {
@@ -190,5 +197,89 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  height: 0;
+  width: 100vw;
+  padding: 0 24px;
+  background: #070724;
+  z-index: 3;
+  overflow: hidden;
+  -webkit-transition: height 0.8s ease-in-out;
+  transition: height 0.8s ease-in-out;
+}
+
+.sidebar.open {
+  height: 100vh;
+}
+
+.sidebar-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.sidebar-item .arrow-right {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-planet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.sidebar-planet .round-planet {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.sidebar-planet .round-planet.Mercury {
+  background: #419ebb;
+}
+
+.sidebar-planet .round-planet.Venus {
+  background: #eda249;
+}
+
+.sidebar-planet .round-planet.Earth {
+  background: #6d2ed5;
+}
+
+.sidebar-planet .round-planet.Mars {
+  background: #d14c32;
+}
+
+.sidebar-planet .round-planet.Jupiter {
+  background: #d83a34;
+}
+
+.sidebar-planet .round-planet.Saturn {
+  background: #cd5120;
+}
+
+.sidebar-planet .round-planet.Uranus {
+  background: #1ec1a2;
+}
+
+.sidebar-planet .round-planet.Neptune {
+  background: #2d68f0;
 }
 /*# sourceMappingURL=index.css.map */

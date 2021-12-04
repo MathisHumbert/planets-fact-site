@@ -8,10 +8,7 @@ const Sidebar = () => {
   const { isSidebarOpen } = useGlobalContext();
 
   return (
-    <aside
-      className={`sidebar ${isSidebarOpen && 'open'}`}
-      style={{ display: 'none' }}
-    >
+    <aside className={`sidebar ${isSidebarOpen && 'open'}`}>
       {data.map((item, index) => {
         return (
           <Link
@@ -19,11 +16,11 @@ const Sidebar = () => {
             className="sidebar-item"
             key={index}
           >
-            <div>
-              <span className={`round planet ${item.name}`}></span>
+            <div className="sidebar-planet">
+              <span className={`round-planet ${item.name}`}></span>
               <h2>{item.name}</h2>
             </div>
-            <AiOutlineRight />
+            <AiOutlineRight className="arrow-right" />
           </Link>
         );
       })}

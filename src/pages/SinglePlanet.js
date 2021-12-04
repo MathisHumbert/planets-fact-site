@@ -12,6 +12,7 @@ const SinglePlanet = () => {
   const [planetImage, setPlanetImage] = useState(null);
   const [planetText, setPlanetText] = useState(null);
   const [planetLink, setPlanetLink] = useState(null);
+  const [active, setActive] = useState('overview');
 
   useEffect(() => {
     setLoading(true);
@@ -30,6 +31,13 @@ const SinglePlanet = () => {
 
   const { rotation, revolution, radius, temperature } = planet[0];
 
+  const toggleContent = (e) => {
+    const label = e.target.dataset.label;
+    setPlanetText(planet[0][label].content);
+    setActive(label);
+    setPlanetLink(planet[0][label].source);
+  };
+
   return (
     <main className="planet">
       <div className="planet-img-container">
@@ -46,14 +54,26 @@ const SinglePlanet = () => {
           </a>
         </p>
         <div className="btn-info-container">
-          <button className="btn-info">
+          <button
+            className={`btn-info ${active === 'overview' ? 'active' : null}`}
+            data-label="overview"
+            onClick={(e) => toggleContent(e)}
+          >
             {' '}
             <span>01</span> overview
           </button>
-          <button className="btn-info">
+          <button
+            className={`btn-info ${active === 'structure' ? 'active' : null}`}
+            data-label="structure"
+            onClick={(e) => toggleContent(e)}
+          >
             <span>02</span> internal structure
           </button>
-          <button className="btn-info">
+          <button
+            className={`btn-info ${active === 'geology' ? 'active' : null}`}
+            data-label="geology"
+            onClick={(e) => toggleContent(e)}
+          >
             <span>03</span> surface geology
           </button>
         </div>
