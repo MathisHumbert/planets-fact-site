@@ -4,3 +4,51 @@ $antonio-font: 'Antonio', sans-serif;
 $spartan-font: 'Spartan', sans-serif;
 $white-color: #fff;
 $background-color: #070724;
+
+h1 {
+  font-size: 40px;
+  font-family: $antonio-font;
+  color: $white-color;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: $antonio-font;
+  color: $white-color;
+  text-transform: uppercase;
+  letter-spacing: -0.75px;
+}
+
+h4 {
+  font-size: 8px;
+  font-family: $spartan-font;
+  color: $white-color;
+  text-transform: uppercase;
+  letter-spacing: 0.73px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 11px;
+  color: $white-color;
+  font-family: $spartan-font;
+  line-height: 22px;
+  text-align: center;
+}
+
+.btn-info {
+  background: transparent;
+  border: 0;
+  font-family: $spartan-font;
+  font-size: 9px;
+  font-weight: bold;
+  color: $white-color;
+  text-transform: uppercase;
+  padding: 20px 0;
+
+  span {
+    display: none;
+  }
+}

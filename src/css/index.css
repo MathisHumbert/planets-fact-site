@@ -1,4 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap");
+h1 {
+  font-size: 40px;
+  font-family: "Antonio", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: "Antonio", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.75px;
+}
+
+h4 {
+  font-size: 8px;
+  font-family: "Spartan", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.73px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+p {
+  font-size: 11px;
+  color: #fff;
+  font-family: "Spartan", sans-serif;
+  line-height: 22px;
+  text-align: center;
+}
+
+.btn-info {
+  background: transparent;
+  border: 0;
+  font-family: "Spartan", sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 0;
+}
+
+.btn-info span {
+  display: none;
+}
+
 body {
   background: #070724;
 }
@@ -52,12 +100,95 @@ body {
 
 .planet-img-container {
   width: 100%;
-  padding: 6rem 0;
+  padding: 116px 0 4rem 0;
 }
 
 .planet-img-container .planet-img {
   display: block;
   margin: 0 auto;
   width: 40%;
+}
+
+.planet-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.wiki-link-container {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.wiki-link {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.btn-info-container {
+  position: absolute;
+  top: 69px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  padding: 2rem 0;
+}
+
+.footer-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
 }
 /*# sourceMappingURL=index.css.map */

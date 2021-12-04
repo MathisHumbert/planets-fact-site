@@ -39,10 +39,10 @@ const SinglePlanet = () => {
         <h1>{name}</h1>
         <p>{planetText}</p>
         <p className="wiki-link-container">
-          Source:{' '}
-          <a href={planetLink} className="wiki-link">
+          Source :
+          <a href={planetLink} className="wiki-link" target="_blank">
             Wikipedia
-            <BsArrowUpRightSquareFill />
+            <BsArrowUpRightSquareFill className="wiki-logo" />
           </a>
         </p>
         <div className="btn-info-container">
